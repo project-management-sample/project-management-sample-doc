@@ -78,10 +78,19 @@ body:
       required: true
 
   - type: input
+    id: start_date
+    attributes:
+      label: "開始予定日"
+      description: 修正開始予定日を入力してください (YYYY-MM-DD形式)
+      placeholder: "2026-03-20"
+    validations:
+      required: true
+
+  - type: input
     id: due_date
     attributes:
-      label: "修正期日"
-      description: 修正予定日を入力してください (YYYY-MM-DD形式)
+      label: "完了予定日"
+      description: 修正完了予定日を入力してください (YYYY-MM-DD形式)
       placeholder: "2026-03-31"
     validations:
       required: true

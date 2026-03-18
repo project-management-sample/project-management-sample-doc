@@ -1,0 +1,103 @@
+name: 🐛 ドキュメント訂正
+description: ドキュメントの誤りや不足を報告する場合はこちらを使用してください
+labels: ["documentation", "bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ドキュメント訂正のご報告ありがとうございます。
+        以下の情報を入力してください。WBS管理のため、担当者、期間、重要度は必須項目です。
+
+  - type: textarea
+    id: document_location
+    attributes:
+      label: ドキュメント位置
+      description: |
+        どのドキュメントの何が問題ですか？
+        例: docs/installation.md の「インストール手順」セクション
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: 問題の説明
+      description: |
+        ドキュメントにおける以下のような問題について説明してください
+        - 誤った情報
+        - 不足している情報
+        - 曖昧な表現
+        - 古い情報
+    validations:
+      required: true
+
+  - type: textarea
+    id: current_text
+    attributes:
+      label: 現在のテキスト
+      description: 問題のある現在のテキストを記入してください
+    validations:
+      required: true
+
+  - type: textarea
+    id: suggested_correction
+    attributes:
+      label: 提案する修正内容
+      description: どのように修正すべきかの提案を記入してください
+    validations:
+      required: true
+
+  - type: textarea
+    id: reason
+    attributes:
+      label: 修正が必要な理由
+      description: なぜこの修正が必要なのかを説明してください
+    validations:
+      required: true
+
+  - type: dropdown
+    id: urgency
+    attributes:
+      label: "緊急度"
+      description: この訂正の緊急度を選択してください
+      options:
+        - "緊急 (誤った情報がユーザーに悪影響を与えている)"
+        - "高 (重要な情報の誤りや不足)"
+        - "中 (分かりづらい表現や細かい誤り)"
+        - "低 (タイポや軽微な問題)"
+    validations:
+      required: true
+
+  - type: input
+    id: assignee
+    attributes:
+      label: "担当者 (GitHub ユーザー名)"
+      description: "@ユーザー名で記入してください"
+      placeholder: "@username"
+    validations:
+      required: true
+
+  - type: input
+    id: due_date
+    attributes:
+      label: "修正期日"
+      description: 修正予定日を入力してください (YYYY-MM-DD形式)
+      placeholder: "2026-03-31"
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: 参考情報
+      description: 参照元や参考資料があれば記入してください
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: チェックリスト
+      options:
+        - label: 同様の問題がないか他のドキュメントも確認した
+          required: false
+        - label: 最新版のドキュメントを確認した
+          required: false

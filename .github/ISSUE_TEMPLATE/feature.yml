@@ -1,0 +1,135 @@
+name: ✨ ドキュメント追加提案
+description: 新しいドキュメント作成やセクション追加をリクエストする場合はこちらを使用してください
+labels: ["documentation", "enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ドキュメント追加提案をいただきありがとうございます。
+        以下の情報を入力してください。WBS管理のため、担当者、期間、重要度は必須項目です。
+
+  - type: textarea
+    id: title
+    attributes:
+      label: ドキュメントタイトル
+      description: 追加したいドキュメントの名前を記入してください
+    validations:
+      required: true
+
+  - type: dropdown
+    id: doc_type
+    attributes:
+      label: "ドキュメント種別"
+      description: どの種類のドキュメントですか？
+      options:
+        - "ユーザーガイド"
+        - "インストール・セットアップガイド"
+        - "API リファレンス"
+        - "開発者ガイド"
+        - "トラブルシューティング"
+        - "事例集・チュートリアル"
+        - "設定ガイド"
+        - "その他"
+    validations:
+      required: true
+
+  - type: textarea
+    id: location
+    attributes:
+      label: "追加場所"
+      description: |
+        どのドキュメントツリーのどこに追加するべきですか？
+        例: docs/guides/ 直下、または docs/api/ など
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "ドキュメント内容の説明"
+      description: |
+        追加するドキュメントにはどのような内容を含めるべきですか？
+        主要なセクションも提示してください。
+    validations:
+      required: true
+
+  - type: textarea
+    id: target_audience
+    attributes:
+      label: "対象読者"
+      description: |
+        このドキュメントは誰を対象としていますか？
+        例: エンドユーザー、開発者、管理者など
+    validations:
+      required: true
+
+  - type: textarea
+    id: motivation
+    attributes:
+      label: "必要な理由"
+      description: |
+        なぜこのドキュメントが必要ですか？
+        ユーザーのどのようなニーズを解決しますか？
+    validations:
+      required: true
+
+  - type: textarea
+    id: outline
+    attributes:
+      label: "想定される目次・構成"
+      description: |
+        ドキュメントの大まかな構成を提案してください
+        例：
+        1. 概要
+        2. 前提条件
+        3. 手順
+        4. トラブルシューティング
+      placeholder: |
+        1. 
+        2. 
+        3.
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: "重要度"
+      description: このドキュメント作成の優先度を選択してください
+      options:
+        - "必須 (ユーザーが困っている)"
+        - "高 (早期作成が望ましい)"
+        - "中 (作成予定あり)"
+        - "低 (今後検討)"
+    validations:
+      required: true
+
+  - type: input
+    id: assignee
+    attributes:
+      label: "担当者 (GitHub ユーザー名)"
+      description: "@ユーザー名で記入してください"
+      placeholder: "@username"
+    validations:
+      required: true
+
+  - type: input
+    id: target_date
+    attributes:
+      label: "完成予定日"
+      description: ドキュメント作成完了の予定日を入力してください (YYYY-MM-DD形式)
+      placeholder: "2026-04-30"
+    validations:
+      required: true
+
+  - type: textarea
+    id: reference
+    attributes:
+      label: "参考資料"
+      description: 参考となるドキュメント、外部リソース、関連Issueなど
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: チェックリスト
+      options:
+        - label: 既存のドキュメントで代用できないか確認した
+          required: false
+        - label: ドキュメント構成について検討した
+          required: false

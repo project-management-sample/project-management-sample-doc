@@ -1,0 +1,144 @@
+name: 📋 ドキュメント作成タスク
+description: ドキュメント作成・更新の作業タスクを登録する場合はこちらを使用してください
+labels: ["task", "documentation"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        新しいドキュメント作成タスクを登録いただきありがとうございます。
+        以下の情報を入力してください。WBS管理のため、担当者、期間、重要度は必須項目です。
+
+  - type: textarea
+    id: title
+    attributes:
+      label: タスク・ドキュメント名
+      description: このタスクで作成・更新するドキュメントの名前を説明してください
+    validations:
+      required: true
+
+  - type: dropdown
+    id: action_type
+    attributes:
+      label: "アクション種別"
+      description: このタスクは新規作成ですか、それとも更新ですか？
+      options:
+        - "新規作成"
+        - "既存ドキュメントの更新"
+        - "翻訳"
+        - "レビュー・校正"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "詳細説明"
+      description: |
+        このタスクの詳細を記入してください
+        - 対象ドキュメント
+        - 必要な変更内容
+        - スコープなど
+    validations:
+      required: true
+
+  - type: textarea
+    id: target_audience
+    attributes:
+      label: "対象読者"
+      description: |
+        このドキュメントの対象読者は誰ですか？
+        例: エンドユーザー、開発者、管理者など
+
+  - type: textarea
+    id: outline
+    attributes:
+      label: "ドキュメント構成"
+      description: |
+        ドキュメントの目次や主要セクションを記入してください
+      placeholder: |
+        1. はじめに
+        2. 概要
+        3. 使用方法
+        4. まとめ
+
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: "依存関係・参考資料"
+      description: |
+        このタスクが依存している他のタスク、
+        または参考にすべきリソース・Issueの番号
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: "重要度"
+      description: このタスクの優先度を選択してください
+      options:
+        - "P0 - 最優先 (必須)"
+        - "P1 - 高優先"
+        - "P2 - 中優先"
+        - "P3 - 低優先"
+    validations:
+      required: true
+
+  - type: input
+    id: assignee
+    attributes:
+      label: "担当者 (GitHub ユーザー名)"
+      description: "@ユーザー名で記入してください"
+      placeholder: "@username"
+    validations:
+      required: true
+
+  - type: input
+    id: start_date
+    attributes:
+      label: "開始予定日"
+      description: タスク開始予定日を入力してください (YYYY-MM-DD形式)
+      placeholder: "2026-03-20"
+    validations:
+      required: true
+
+  - type: input
+    id: due_date
+    attributes:
+      label: "完了予定日"
+      description: タスク完了予定日を入力してください (YYYY-MM-DD形式)
+      placeholder: "2026-03-31"
+    validations:
+      required: true
+
+  - type: input
+    id: estimated_hours
+    attributes:
+      label: "見積もり（時間）"
+      description: このタスクに必要と予想される時間を入力してください
+      placeholder: "16"
+
+  - type: textarea
+    id: review_criteria
+    attributes:
+      label: "レビュー基準"
+      description: |
+        このドキュメントが完成したとみなされる基準を記入してください
+        - [ ] 完成基準1
+        - [ ] 完成基準2
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: "備考"
+      description: その他の注記や参考情報
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: チェックリスト
+      options:
+        - label: スコープが明確に定義されている
+          required: false
+        - label: 担当者と期日を確認した
+          required: false
+        - label: 必要なリソース・参考資料を用意した
+          required: false

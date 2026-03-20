@@ -1,0 +1,4 @@
+role_code,role_name
+USER,一般ユーザー
+APPROVER,承認者
+ADMIN,管理者

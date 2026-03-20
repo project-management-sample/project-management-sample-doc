@@ -1,0 +1,4 @@
+login_id,user_name,role
+user01,山田太郎,USER
+approver01,鈴木花子,APPROVER
+admin01,管理者,ADMIN

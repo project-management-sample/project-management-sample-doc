@@ -1,0 +1,34 @@
+openapi: 3.0.3
+info:
+  title: Approval Workflow API
+  version: 1.0.0
+paths:
+  /api/login:
+    post:
+      summary: Login
+      responses:
+        '200':
+          description: success
+  /api/applications:
+    get:
+      summary: List applications
+      responses:
+        '200':
+          description: success
+    post:
+      summary: Create application
+      responses:
+        '201':
+          description: created
+  /api/applications/{id}/approve:
+    post:
+      summary: Approve application
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: approved

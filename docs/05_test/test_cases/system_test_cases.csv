@@ -1,0 +1,2 @@
+test_id,scenario,condition,expected
+ST-001,申請から承認まで,ユーザーと承認者が存在,業務フロー完了

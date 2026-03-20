@@ -1,0 +1,6 @@
+id,task,start_date,end_date,owner,status
+1,requirements,2026-04-01,2026-04-07,pm,done
+2,basic_design,2026-04-08,2026-04-15,se,in_progress
+3,detailed_design,2026-04-16,2026-04-25,se,todo
+4,implementation,2026-04-26,2026-05-20,dev,todo
+5,test,2026-05-21,2026-06-05,qa,todo

@@ -1,0 +1,3 @@
+test_id,target,condition,expected
+IT-001,application create,正常入力,DB登録と監査ログ出力
+IT-002,approve application,承認者で実行,statusがAPPROVEDになる

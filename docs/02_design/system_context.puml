@@ -1,0 +1,12 @@
+@startuml
+actor User
+rectangle Browser
+rectangle "Frontend" as FE
+rectangle "Backend API" as API
+database PostgreSQL as DB
+
+User --> Browser
+Browser --> FE
+FE --> API
+API --> DB
+@enduml

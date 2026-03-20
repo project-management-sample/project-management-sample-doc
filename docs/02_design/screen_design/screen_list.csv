@@ -1,0 +1,6 @@
+screen_id,screen_name,role,description
+SCR-001,login,all,ログイン画面
+SCR-002,application_list,user,申請一覧画面
+SCR-003,application_create,user,申請作成画面
+SCR-004,application_detail,user,申請詳細画面
+SCR-005,user_admin,admin,ユーザー管理画面

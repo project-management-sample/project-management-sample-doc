@@ -1,0 +1,3 @@
+defect_id,summary,severity,status,owner
+BUG-001,承認時に監査ログが出力されない,High,Open,suzuki
+BUG-002,申請一覧の並び順が不正,Medium,Open,tanaka

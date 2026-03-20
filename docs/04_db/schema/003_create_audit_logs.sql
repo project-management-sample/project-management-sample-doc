@@ -1,0 +1,8 @@
+CREATE TABLE audit_logs (
+  id BIGSERIAL PRIMARY KEY,
+  entity_type VARCHAR(50) NOT NULL,
+  entity_id BIGINT NOT NULL,
+  action VARCHAR(50) NOT NULL,
+  operated_by BIGINT NOT NULL REFERENCES users(id),
+  operated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);

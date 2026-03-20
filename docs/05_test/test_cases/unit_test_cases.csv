@@ -1,0 +1,3 @@
+test_id,target,condition,expected
+UT-001,login_id validation,空文字,必須エラー
+UT-002,title length,101文字,文字数エラー

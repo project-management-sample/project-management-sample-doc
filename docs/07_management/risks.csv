@@ -1,0 +1,3 @@
+risk_id,summary,impact,probability,action
+RISK-001,承認フロー確定遅延,High,Medium,要件確定会を前倒しする
+RISK-002,レビュー工数不足,Medium,Medium,レビュー担当を事前確保する

@@ -1,0 +1,13 @@
+@startuml
+actor User
+participant Frontend
+participant API
+database DB
+
+User -> Frontend : 申請入力
+Frontend -> API : POST /api/applications
+API -> API : 入力チェック
+API -> DB : insert applications
+API -> DB : insert audit_logs
+API --> Frontend : 201 Created
+@enduml

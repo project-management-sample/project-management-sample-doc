@@ -1,0 +1,10 @@
+@startuml
+rectangle "Frontend App" as FE
+rectangle "Application API" as API
+rectangle "Batch Job" as BATCH
+database "PostgreSQL" as DB
+
+FE --> API
+API --> DB
+BATCH --> DB
+@enduml

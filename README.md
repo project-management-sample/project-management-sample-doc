@@ -59,6 +59,11 @@ npx github-label-sync --access-token <TOKEN> --labels .github/labels.yml akinami
 
 ## セットアップ
 
+```bash
+sudo locale-gen en_US.UTF-8
+sudo update-locale LANG=en_US.UTF-8
+```
+
 リポジトリをクローン後、初回セットアップを実行してください：
 
 ```bash

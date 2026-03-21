@@ -57,6 +57,19 @@ npx github-label-sync --access-token <TOKEN> --labels .github/labels.yml akinami
 - **機能・タスク** → Story テンプレートを使用
 - **バグ** → Bug テンプレートを使用
 
+## セットアップ
+
+リポジトリをクローン後、初回セットアップを実行してください：
+
+```bash
+git config core.hooksPath .githooks
+chmod +x .githooks/pre-commit
+```
+
+これにより **Pre-commit hooks** が有効化され、ドキュメント変更時に `CHANGELOG.md` の更新が必須となります。
+
+> ドキュメントファイル（`docs/` 配下、`.md` ファイルなど）を変更した場合、`CHANGELOG.md` も同時に更新していない commit はブロックされます。
+
 ## ライセンス
 
 [MIT License](LICENSE)

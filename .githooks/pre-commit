@@ -1,0 +1,43 @@
+#!/bin/bash
+
+# Pre-commit hook: CHANGELOG.md の確認
+# ドキュメントが変更される場合、CHANGELOG.md の更新を必須とする
+
+# ステージされているファイルを取得
+STAGED_FILES=$(git diff --cached --name-only)
+
+# 監視対象のファイルパターン
+# docs/ 配下のマークダウン、テンプレート、README など
+WATCHED_PATTERNS=(
+  "^docs/"
+  "^README"
+  "\.md$"
+)
+
+# 変更されているドキュメントファイルをチェック
+HAS_DOC_CHANGES=false
+for file in $STAGED_FILES; do
+  for pattern in "${WATCHED_PATTERNS[@]}"; do
+    if [[ $file =~ $pattern ]]; then
+      HAS_DOC_CHANGES=true
+      break 2
+    fi
+  done
+done
+
+# ドキュメント変更がある場合、CHANGELOG.md が含まれているか確認
+if [ "$HAS_DOC_CHANGES" = true ]; then
+  if ! echo "$STAGED_FILES" | grep -q "^CHANGELOG.md$"; then
+    echo "❌ エラー: ドキュメントが変更されている場合、CHANGELOG.md の更新が必須です"
+    echo ""
+    echo "次のいずれかを実行してください:"
+    echo "  1. CHANGELOG.md を編集して git add CHANGELOG.md でステージ"
+    echo "  2. 誤字修正などのCHANGELOG.mdに記載するほどではない軽微な変更の場合は、commit メッセージに [minor] タグを追加"
+    echo ""
+    echo "変更されているドキュメント:"
+    echo "$STAGED_FILES" | grep -E "^docs/|\.md$|^README"
+    exit 1
+  fi
+fi
+
+exit 0
